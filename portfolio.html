@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hashini | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background: #0b1120;
+    color: #e2e8f0;
+}
+
+/* ================= NAVBAR ================= */
+header {
+    background: #0f172a;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    background: linear-gradient(90deg, #38bdf8, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #e2e8f0;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: #38bdf8;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* ================= SECTIONS ================= */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    background: linear-gradient(90deg, #38bdf8, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ================= HERO ================= */
+.hero {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    padding: 140px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero b {
+    background: linear-gradient(90deg, #38bdf8, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* ================= BUTTON ================= */
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: linear-gradient(90deg, #38bdf8, #a855f7);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(56,189,248,0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(168,85,247,0.6);
+}
+
+/* ================= LIGHT SECTION ================= */
+.light {
+    background: #111827;
+}
+
+/* ================= GRID ================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(56,189,248,0.4);
+}
+
+/* ================= CONTACT ================= */
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #1e293b;
+    color: white;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid #38bdf8;
+}
+
+.contact-form button {
+    padding: 12px;
+    border: none;
+    background: linear-gradient(90deg, #38bdf8, #a855f7);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    transform: scale(1.05);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #0f172a;
+    color: #94a3b8;
+    padding: 25px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.social-links a {
+    color: #38bdf8;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #a855f7;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+    <h2>Hashini</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Profile</a></li>
+        <li><a href="#skills">Expertise</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#contact">Connect</a></li>
+    </ul>
+</nav>
+</header>
+
+<section id="home" class="hero">
+    <h1>Hello, I'm <b>hashini</b></h1>
+    <p>Computer Science Engineering Student | Aspiring web developer</p>
+    <a href="#contact" class="btn">Let's Work Together</a>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p style="max-width:700px; margin:20px auto;">
+        I am a passionate Computer Science Engineering student focused on building responsive, modern, and user-friendly websites. 
+        I enjoy transforming ideas into real-world digital solutions using clean and efficient code.
+    </p>
+
+    <p><b>Education:</b> B.E in Computer Science Engineering</p>
+    <p><b>Career Goal:</b> To become a web developer</p>
+
+    <a href="#" class="btn">Download Resume</a>
+</section>
+
+<section id="skills" class="light">
+    <h2>Skills</h2>
+    <div class="grid">
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">C Programming</div>
+        <div class="card">Problem Solving</div>
+        <div class="card">Team Collaboration</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>Responsive personal portfolio built using HTML & CSS with modern UI design with help of online webpages.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="light">
+    <h2>Contact me</h2>
+
+    <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <p style="margin-top:20px;">
+        Email: hashinisenthil07@gmail.com <br>
+        Phone: +91 9443346255
+    </p>
+</section>
+
+<footer>
+    <p>Thankyou...!!!</p>
+    <div class="social-links">
+        <a href="#">LinkedIn</a> |
+        <a href="#">GitHub</a> |
+        <a href="#">Instagram</a>
+    </div>
+</footer>
+
+</body>
+</html>
